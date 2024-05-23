@@ -15,7 +15,7 @@ jobs:
     - name: Auth
       run: .\ngrok\ngrok.exe authtoken $Env:ZR_JUNCTION_TOKEN
       env:
-        NGROK_AUTH_TOKEN: ${{ secrets.ZR_JUNCTION_TOKEN }}
+        ZR_JUNCTION_TOKEN: ${{ secrets.ZR_JUNCTION_TOKEN }}
     - name: Enable TS
       run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
